@@ -16,7 +16,7 @@ RUN npm run build
 
 # --- 2. Python dependencies --------------------------------------------------
 # Python 3.12, as in .python-version (which CI uses too).
-FROM python:3.12-slim-trixie@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704 AS python-base
+FROM python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b AS python-base
 
 # uv installs the locked dependencies here; the runtime copies the virtualenv
 # and leaves uv behind.
