@@ -7,7 +7,7 @@
 
 # --- 1. Frontend bundle ------------------------------------------------------
 # Node 24, as in CI (.github/workflows/ci.yml).
-FROM node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53 AS frontend
+FROM node:24-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS frontend
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
@@ -16,7 +16,7 @@ RUN npm run build
 
 # --- 2. Python dependencies --------------------------------------------------
 # Python 3.12, as in .python-version (which CI uses too).
-FROM python:3.12-slim-trixie@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704 AS python-base
+FROM python:3.12-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b AS python-base
 
 # uv installs the locked dependencies here; the runtime copies the virtualenv
 # and leaves uv behind.
